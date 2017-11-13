@@ -1,4 +1,8 @@
-board = randi(2,10) -1;
+if ~exist('boardsize', 'var')
+    global boardsize;
+    boardsize = 20;
+end
+board = randi(2,boardsize) -1;
 % pboard is used to see if the previous board is exactly the same as the
 % new. If this is true and we are not on the first loop,
 pboard = 1;

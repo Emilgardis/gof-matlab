@@ -29,8 +29,9 @@ for i = 1:8
     y = neighbours(i,2)+sy;
     % are we wrapping or not, for now, consider out of bounds as empty,
     % later we may want to make the world into a sphere.
-    if (~((x == 0) || (x > boardsize(1))) ...
-            && ~((y == 0) || (y > boardsize(2))))
+    if (...
+        ~((x == 0) || (x > boardsize(1))) && ...
+        ~((y == 0) || (y > boardsize(2))))
         count = count + board(x, y);
     end
     
