@@ -1,5 +1,5 @@
 if ~exist('boardsize', 'var')
-    boardsize = 20;
+    boardsize = [50,100];
 end
 % make new figure
 h = figure;
