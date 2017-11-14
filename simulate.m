@@ -1,6 +1,6 @@
 function [newboard] = simulate(board)
-%simulate simulates the game of life
-%   ---
+%SIMULATE simulates the game of life by one step.
+%   
 arrsize = size(board);
 newboard = board;
 for xx = 1:arrsize(1)
@@ -13,14 +13,15 @@ for xx = 1:arrsize(1)
             % spawn
             newboard(xx,yy) = 1;
         end
+        % no check needed for n == 2 since that condition means the cell
+        % keeps on living if it already exists.
     end
 end
 end
 
 function [count] = getNeighbours(board, sx, sy)
 %getNeighbours count neighbours to cell at sx,sy
-%   convolution of 3x3 [1 1 1; 1 0 1; 1 1 1], returning the value of the center
-%   element
+%   convolution of 3x3 [1 1 1; 1 0 1; 1 1 1]
 neighbours = [-1 1; 0, 1; 1 1; -1 0; 1 0; -1 -1; 0 -1; 1 -1];
 count = 0;
 boardsize = size(board);
