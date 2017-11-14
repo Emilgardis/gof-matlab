@@ -8,7 +8,7 @@ board = randi(2,boardsize) -1;
 % new. If this is true, exit the loop.
 pboard = 1;
 while (~(isequal(board,pboard)))
-    imshow(board, 'InitialMagnification', 'fit');
+    imshow(~board, 'InitialMagnification', 'fit');
     drawnow;
     pboard = board;
     board = simulate(board);

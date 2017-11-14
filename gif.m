@@ -10,7 +10,7 @@ board = randi(2,boardsize) -1;
 pboard = 1;
 n = 1;
 while (~(isequal(board,pboard)))
-    imshow(board, 'InitialMagnification', 'fit');
+    imshow(~board, 'InitialMagnification', 'fit');
     drawnow;
     frame = getframe(h);
     im = frame2im(frame);
