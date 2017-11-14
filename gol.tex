@@ -7,6 +7,16 @@
 \usepackage[utf8]{inputenc}
 \usepackage{minted}
 \usepackage{graphicx}
+\usepackage[iso]{datetime}
+%\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+\usepackage{lastpage}
+
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\scr@startchapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\makeatother
 % roman numeral
 \newcommand{\RN}[1]{%
 	\textup{\uppercase\expandafter{\romannumeral#1}}%
@@ -16,7 +26,7 @@
 \title{Game Of Life}
 \author{Gardström Emil \and Wallin Dennis}
 \subtitle{Beräkningsvetenskap \RN{1}}
-\titlehead{\Large Uppsala Universitet\hfill KandMa}
+\titlehead{\Large Uppsala Universitet\hfill KandMa, Grupp 4}
 
 
 \begin{document}
@@ -24,16 +34,19 @@
 
 \selectlanguage{english}
 \begin{abstract}
-	The Game of Life was first conceived in 1970 by Conway J.H. This project aims to recreate this simulation of living cells using Matlab. This is done by drawing each generation of the simulation.
+	The Game of Life was first conceived in 1970 by Conway J.H. This project aims to recreate this simulation of living cells using Matlab. This is done by drawing each generation of the simulation after applying the specific rules of the game.
 \end{abstract}
 \selectlanguage{swedish}
 \chapter{Inledning}
-\section{Situation}
-I detta projekt får vi öva på programmering inklusive if-satser, funktioner och loopar.
-\section{Problem}
+I detta projekt får vi öva på programmering inklusive if-satser, funktioner och loopar genom att tillämpa dessa verktyg för att implementera en simulering av Game of Life.
+\chapter{Genomförande}
+För att få fram en snygg utskrift använder vi oss av \mintinline{matlab}{imshow}, vilket innebär att matrisen blir utskriven som en binär bild, där $1$ är vit, och $0$ är svart. Vi bestämde oss däremot för att invertera detta precis vid utskrift så att en levande cell är svart, och en död cell är vit.
 \chapter{Resultat}
 \includegraphics[height=6cm]{src/rendered.png}
+\chapter{Slutsats}
+Det går att skapa ett fungerande skript i matlab som simulerar Game of Life genom att använda de verktyg som finns inbyggt i språket.
 \appendix
+\newpage
 \chapter{simulate.m}
 \inputminted[linenos=true,frame=leftline]{matlab}{src/simulate.m}
 %\lstinputlisting[language=matlab,numbers=left,frame=L]{src/simulate.m}
