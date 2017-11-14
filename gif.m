@@ -1,8 +1,12 @@
 h = figure;
 filename = 'animated.gif';
-board = randi(2,20) -1;
+% Conditional boardsize, default is 20x20
+if ~exist('boardsize', 'var') || isempty(boardsize)
+    boardsize = 20;
+end
+board = randi(2,boardsize) -1;
 % pboard is used to see if the previous board is exactly the same as the
-% new. If this is true and we are not on the first loop,
+% new. If this is true and we are not on the first loop, exit the loop.
 pboard = 1;
 n = 1;
 while (~(isequal(board,pboard)))
