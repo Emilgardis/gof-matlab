@@ -6,6 +6,7 @@
 \usepackage[swedish,english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{minted}
+\usepackage{graphicx}
 % roman numeral
 \newcommand{\RN}[1]{%
 	\textup{\uppercase\expandafter{\romannumeral#1}}%
@@ -14,7 +15,8 @@
 % Title Page
 \title{Game Of Life}
 \author{Gardström Emil \and Wallin Dennis}
-\subject{Beräkningsvetenskap \RN{1}}
+\subtitle{Beräkningsvetenskap \RN{1}}
+\titlehead{\Large Uppsala Universitet\hfill KandMa}
 
 
 \begin{document}
@@ -25,13 +27,17 @@
 	The Game of Life was first conceived in 1970 by Conway J.H. This project aims to recreate this simulation of living cells using Matlab. This is done by drawing each generation of the simulation.
 \end{abstract}
 \selectlanguage{swedish}
+\chapter{Inledning}
+\section{Situation}
+I detta projekt får vi öva på programmering inklusive if-satser, funktioner och loopar.
+\section{Problem}
+\chapter{Resultat}
+\includegraphics[height=6cm]{src/rendered.png}
 \appendix
-\section{Inledning}
-
 \chapter{simulate.m}
-\inputminted[linenos=true,frame=leftlines]{matlab}{src/simulate.m}
+\inputminted[linenos=true,frame=leftline]{matlab}{src/simulate.m}
 %\lstinputlisting[language=matlab,numbers=left,frame=L]{src/simulate.m}
 \chapter{gof.m}
-\inputminted[linenos=true]{matlab}{src/gof.m}
+\inputminted[linenos=true,,frame=leftline]{matlab}{src/gof.m}
 %\lstinputlisting[language=matlab,numbers=left,frame=L]{src/gof.m}
 \end{document}     
