@@ -1,4 +1,3 @@
-# Game of Life - Matlab
-Project for Uppsala Universitet
+# UU Beräknings vetenskap 1 Uppgifter
 
-![animated game of life](animated.gif)
+
