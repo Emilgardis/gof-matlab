@@ -3,6 +3,7 @@ function S = simpson(func, a, b, n)
 %
 % This function uses Simpson's rule to approximate the
 % integral of the function func over the interval [a, b].
+% See also integral
 if (mod(n,2))
     error('n must be even');
 end
