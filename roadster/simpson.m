@@ -1,6 +1,7 @@
 function S = simpson(func, a, b, n)
 % S = simpson(func, a, b, n)
-%
+% 
+% \( n \equiv 0 \pmod{2} \)
 % This function uses Simpson's rule to approximate the
 % integral of the function func over the interval [a, b].
 % See also integral

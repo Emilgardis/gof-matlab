@@ -1,8 +1,8 @@
 function T = time_to_destination(x, route, n)
 %TIME_TO_DESTINATION returns time to destination
-% 
+%
+% \( n \equiv 0 \pmod{2} \)
 % Recommended 50 < n < 300
-% n mod 
 % time is
 % \( T(x) = \int_0^x \frac{1}{v(s)} \, ds \)
 % v(s) is positive
