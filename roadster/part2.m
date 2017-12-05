@@ -1,6 +1,6 @@
-t_anna = time_to_destination(65.2162,'speed_anna',100)
+t_anna = time_to_destination(65.2162,'speed_anna',256)
 t_anna_mat = time_to_destination_matlab(65.2162,'speed_anna');
-c_anna = total_consumption(65.2162,'speed_anna',100)
+c_anna = total_consumption(65.2162,'speed_anna',256)
 c_anna_mat = total_consumption_matlab(65.2162,'speed_anna');
 
 t_elsa = time_to_destination(65.0040,'speed_elsa',100)
@@ -13,7 +13,7 @@ h = zeros(1,10);
 E = zeros(1,10);
 for i=1:10
     E(i) = abs(t_anna_mat - time_to_destination(65.2162,'speed_anna',n));
-    h(i) = 65.0040/n;
+    h(i) = 65.2162/n;
     n = 2*n;
 end
 clf;

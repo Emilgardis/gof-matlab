@@ -32,10 +32,10 @@
 }
 
 % Title Page
-\title{Roadster - R1}
+\title{Roadster - R2}
 \author{Gardström Emil \and Wallin Dennis}
 \subtitle{Beräkningsvetenskap \RON{1}}
-\titlehead{\Large Uppsala Universitet\hfill KandMa, Grupp \#}
+\titlehead{\Large Uppsala Universitet\hfill KandMa, Grupp 4}
 
 %\addbibresource{\jobname.bib}
 \begin{document}
@@ -47,14 +47,27 @@
 \selectlanguage{swedish}
 \chapter{Inledning}
 \chapter{Resultat}
+\section{Del 1}
 Vi ser att den bästa den bästa hastigheten att köra vid är \SI{28.7}{\kilo\meter\per\hour},varvid man kan köra \SI{659.48}{\kilo\meter}.
 % Fix, this looks really bad
-\begin{sidewaysfigure}
-	\caption{Utskrift från \textit{s.m}}
-	\includegraphics[width=1.2\textwidth]{/home/localsys/projects/uu-bervet1/roadster/part1.png}
-\end{sidewaysfigure}
+\begin{figure}
+	\caption{Utskrift 1 från \textit{part1.m}}
+	\includegraphics[width=1.2\textwidth]{roadster/roadstergraph.png}
+\end{figure}
+\begin{figure}
+	\caption{Utskrift 2 från \textit{part1.m}}
+	\includegraphics[width=1.2\textwidth]{roadster/elsa_anna.png}
+\end{figure}
+\section{Del 2}
+Vi ser i figur~\ref{fig:conv} att vår approximering av integrationen är lik \(h^2\). Det tar \SI{0.6990}{\hour} för Anna att åka sin sträcka och \SI{0.9993}{\hour} för Elsa. De förbrukar \SI{11.944}{\kilo\watt\hour} resp. \SI{8.0403}{\kilo\watt\hour}
+\begin{figure}
+	\caption{Utskrift  från \textit{part2.m}}
+	\includegraphics[width=1.2\textwidth]{roadster/conv.png}
+	\label{fig:conv}
+\end{figure}
 \appendix
 \newpage
+\chapter{Appendix}
 \fvset{showspaces}
 \renewcommand\FancyVerbSpace{\textcolor{white}{\char32}}
 % Patch minted/fancyvrb nos
@@ -62,16 +75,26 @@ Vi ser att den bästa den bästa hastigheten att köra vid är \SI{28.7}{\kilo\m
 %default definition is: \def\theFancyVerbLine{\rmfamily\tiny\arabic{FancyVerbLine}}
 \let\theHFancyVerbLine\theFancyVerbLine% don't apply our patch to hyperref's version
 \def\theFancyVerbLine{\rmfamily\tiny\emptyaccsupp{\arabic{FancyVerbLine}}}
-\chapter{s.m}
-\attachfile{/home/localsys/projects/uu-bervet1/roadster/s.m}
-\inputminted[linenos=true,frame=leftline]{matlab}{/home/localsys/projects/uu-bervet1/roadster/s.m}
+%% FIXME: Add texcomments=true, doesn't work because of reasons
+\chapter{part1.m}
+\attachfile{roadster/part1.m}
+\inputminted[linenos=true,frame=leftline]{matlab}{roadster/part1.m}
 %\lstinputlisting[language=matlab,numbers=left,frame=L]{src/simulate.m}
 \chapter{velocity.m}
-\attachfile{/home/localsys/projects/uu-bervet1/roadster/velocity.m}
-\inputminted[linenos=true,,frame=leftline]{matlab}{/home/localsys/projects/uu-bervet1/roadster/velocity.m}
+\attachfile{roadster/velocity.m}
+\inputminted[linenos=true,frame=leftline]{matlab}{roadster/velocity.m}
 \chapter{consumption.m}
-\attachfile{/home/localsys/projects/uu-bervet1/roadster/consumption.m}
-\inputminted[linenos=true,,frame=leftline]{matlab}{/home/localsys/projects/uu-bervet1/roadster/consumption.m}
+\attachfile{roadster/consumption.m}
+\inputminted[linenos=true,frame=leftline]{matlab}{roadster/consumption.m}
+\chapter{part2.m}
+\attachfile{roadster/part2.m}
+\inputminted[linenos=true,frame=leftline]{matlab}{roadster/part2.m}
+\chapter{time\_to\_destination.m}
+\attachfile{roadster/time_to_destination.m}
+\inputminted[linenos=true,frame=leftline]{matlab}{roadster/time_to_destination.m}
+\chapter{simpson.m}
+\attachfile{roadster/simpson.m}
+\inputminted[linenos=true,frame=leftline]{matlab}{roadster/simpson.m}
 %\chapter{time\_to\_destination.m}
 % Fix latex rendering of math
 %\attachfile{/home/localsys/projects/uu-bervet1/roadster/time_to_destination.m}
