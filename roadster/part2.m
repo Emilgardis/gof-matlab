@@ -22,7 +22,8 @@ hold on;
 loglog(h,h,'--',h,h.^2,'-.',h,h.^4, '-');
 axis([min(h) max(h) min(E) 10]);
 legend('Simpson','h','h^2','h^4','Location','Best');
-
+xlabel('h');
+ylabel('error');
 function T = time_to_destination_matlab(x, route)
 %TIME_TO_DESTINATION returns time to destination
 % 
