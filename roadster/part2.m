@@ -8,9 +8,20 @@ t_elsa_mat = time_to_destination_matlab(65.0040,'speed_elsa');
 c_elsa = total_consumption(65.0040,'speed_elsa',100)
 c_elsa_mat = total_consumption_matlab(65.0040,'speed_elsa');
 
-disp(t_anna - t_anna_mat);
-disp(c_anna - c_anna_mat);
-loglog(
+n=2;
+h = zeros(1,10);
+E = zeros(1,10);
+for i=1:10
+    E(i) = abs(t_anna_mat - time_to_destination(65.2162,'speed_anna',n));
+    h(i) = 65.0040/n;
+    n = 2*n;
+end
+clf;
+loglog(h,E,'x-r');
+hold on;
+loglog(h,h,'--',h,h.^2,'-.',h,h.^4, '-');
+axis([min(h) max(h) min(E) 10]);
+legend('Simpson','h','h^2','h^4','Location','Best');
 
 function T = time_to_destination_matlab(x, route)
 %TIME_TO_DESTINATION returns time to destination
