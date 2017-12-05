@@ -10,13 +10,3 @@ f = @(s) 1./velocity(s,route);
 1/f(x)
 
 end
-
-function Q = integral(FUN,a,b)
-%INTEGRAL Own implementation of matlab integral
-%    newton?
-
-% do stuff to do integral
-FUN;
-a+b;
-
-end
