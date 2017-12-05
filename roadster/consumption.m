@@ -1,5 +1,6 @@
 function c = consumption(v)
-%CONSUMPTION returns energy-consumption `c` for a given velocity `v`
+%CONSUMPTION returns energy-consumption `c` for a given velocity `v` on the
+%roadster
 %   `c`: (Wh/km)
 %   `v`: (km/h)
 
