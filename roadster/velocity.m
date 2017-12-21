@@ -4,9 +4,7 @@ function v = velocity(x,route)
 %   `x`: (km)
 %   `route`: filename of data
 load(route);
-if x ~= 0
-    assert(max(x) <= distance_km(end), sprintf('Distance exceded, max distance %f', distance_km(end)))
-end
+assert(max(x) <= distance_km(end), sprintf('Distance exceded, max distance %f', distance_km(end)))
 v = interp1(distance_km, speed_kmph, x, 'spline');
 end
 

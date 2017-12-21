@@ -7,6 +7,7 @@ plot(0:0.1:200,consumption(0:0.1:200),'k')
 title('Roadster')
 xlabel('speed [km/h]')
 ylabel('consumption [Wh/km]')
+legend('data','spline interploation', 'Location','northwest')
 subplot(2,1,2);
 battery = 55e3; % Wh
 reach = battery./(consumption(0:0.1:200));

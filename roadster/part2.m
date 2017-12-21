@@ -3,9 +3,9 @@ t_anna_mat = time_to_destination_matlab(65.2162,'speed_anna');
 c_anna = total_consumption(65.2162,'speed_anna',256)
 c_anna_mat = total_consumption_matlab(65.2162,'speed_anna');
 
-t_elsa = time_to_destination(65.0040,'speed_elsa',100)
+t_elsa = time_to_destination(65.0040,'speed_elsa',256)
 t_elsa_mat = time_to_destination_matlab(65.0040,'speed_elsa');
-c_elsa = total_consumption(65.0040,'speed_elsa',100)
+c_elsa = total_consumption(65.0040,'speed_elsa',256)
 c_elsa_mat = total_consumption_matlab(65.0040,'speed_elsa');
 
 n=2;

@@ -1,4 +1,6 @@
 function [x, niter] = newton(f, fprim, x0, err)
+%NEWTON Newton's method for finding successively better approximations to the 
+%   zeroes of a real-valued function.
 %
 % [x, niter] = newton(f, fprim, x0, err)
 %
