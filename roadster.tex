@@ -55,19 +55,19 @@
 \selectlanguage{swedish}
 \tableofcontents
 \chapter{Inledning}
-Detta projekt är en undersökning på räckvidden en elbil har givet data från en specifik väg och bilens laddning. Bilen som används är en \textit{Tesla Roadster} som har ett batteri på \SI{55}{\kilo\watt\hour}
+Detta projekt är en undersökning på räckvidden en elbil har givet data från en specifik väg och bilens hastighet. Bilen som används är en \textit{Tesla Roadster} som har ett batteri på \SI{55}{\kilo\watt\hour}
 \chapter{Resultat}
 \section{Approximation}
 För att få fram elförbrukningen och vid en viss hastighet använder vi data från elbilen som innehåller konsumptionen i enheten \si{\watt\hour\per\kilo\meter}.
 För att interpolera denna data används \mintinline{matlab}{spline} funktionen. Passningen kan ses i figur~\ref{fig:rgraph}.
-Analysering av denna data ger oss den hastighet som tillåter längsta färden med ett fulladdat batteri, \SI{659.48}{\kilo\meter} under \SI{28.7}{\kilo\meter\per\hour}.
+Analysering av denna data ger oss den hastighet som tillåter längsta färden med ett fulladdat batteri, \SI{659.5}{\kilo\meter} under \SI{28.7}{\kilo\meter\per\hour}.
 % Fix, this looks really bad
 \begin{figure}[H]
 	\caption{Utskrift 1 från \textit{part1.m}}
 	\label{fig:rgraph}
 	\includegraphics[width=1.2\textwidth]{roadster/part1.png}
 \end{figure}
-Vi har även fått in data från färden på en väg av två källor. Anna har åkt \SI{65.2162}{\kilo\meter} och Elsa har åkt \SI{65.0040}{\kilo\meter}. Denna data innehåller hastigheten som bilen färdades i efter en viss sträcka. Se figur~\ref{fig:ea_graph}. Även dessa data interpoleras.
+Vi har även fått in data från färden på en väg av två källor. Anna har åkt \SI{65.2}{\kilo\meter} och Elsa har åkt \SI{65.0}{\kilo\meter}. Denna data innehåller hastigheten som bilen färdades i efter en viss sträcka. Se figur~\ref{fig:ea_graph}. Även dessa data interpoleras.
 \begin{figure}[H]
 	\caption{Utskrift 2 från \textit{part1.m}}
 	\label{fig:ea_graph}
@@ -80,7 +80,7 @@ För tiden får vi integralen
 och för den totala konsumptionen har vi integralen
 \[ E(x) = \int_0^x c(v(s)) \, ds \]
 där \(v(s)\) är hastigheten \si{\kilo\meter\per\hour} efter en sträcka \(s\) \si{\kilo\meter} och \(c(v)\) är konsumptionen \si{\watt\hour} vid en hastighet \si{\kilo\meter\per\hour}.\\
-Vi ser i figur~\ref{fig:conv} att vår approximering av integrationen är i större del lik \(h^2\), vilket är förväntat av Simpsons. Vi använder oss av $256$ intervall för att integrera då det värdet är det lägsta antalet intervall som är inom en acceptabel tolerans av 2 värdesiffror. Detta var jämfört manuellt med matlabs egna \mintinline{matlab}{integral} som är mer precis. Det tar \SI{0.6990}{\hour} för Anna att åka sin sträcka och \SI{0.9993}{\hour} för Elsa. De förbrukar \SI{11.9443}{\kilo\watt\hour} respektive \SI{8.0403}{\kilo\watt\hour}.
+Vi ser i figur~\ref{fig:conv} att vår approximering av integrationen är i större del lik \(h^2\), vilket är förväntat av Simpsons. Vi använder oss av $256$ intervall för att integrera då det värdet är det lägsta antalet intervall som är inom en acceptabel tolerans av 2 värdesiffror. Detta var jämfört manuellt med matlabs egna \mintinline{matlab}{integral} som är mer precis. Det tar \SI{42}{\minute} för Anna att åka sin sträcka och \SI{59}{\minute} för Elsa. De förbrukar \SI{11.9}{\kilo\watt\hour} respektive \SI{8.0}{\kilo\watt\hour}.
 \begin{figure}
 	\caption{Utskrift  från \textit{part2.m}}
 	\label{fig:conv}
@@ -97,8 +97,8 @@ f(x) = c - E(x)
 \end{cases}
 \]
 För att hitta roten, \(f(x) = 0\), använder vi oss av en bisektion för att snabbt hitta ett närmevärde till denna rot, och sedan använda Newtons metod för att hitta ett mer exakt värde baserat på detta närmevärde.
-Anna kan åka \SI{49.3163}{\kilo\meter} på \SI{30}{\minute}, Elsa kan åka \SI{37.4248}{\kilo\meter}.
-Anna och Elsa kan med en laddning på \SI{10}{\kilo\watt\hour} åka \SI{52.7925}{\kilo\meter} respektive \SI{65.0040}{\kilo\meter}. Notera att Elsa åker hela sin rutt.
+Anna kan åka \SI{49.3}{\kilo\meter} på \SI{30}{\minute}, Elsa kan åka \SI{37.4}{\kilo\meter}.
+Anna och Elsa kan med en laddning på \SI{10}{\kilo\watt\hour} åka \SI{52.8}{\kilo\meter} respektive \SI{65.0}{\kilo\meter}. Notera att Elsa åker hela sin rutt.
 \renewcommand{\appendixpagename}{Appendix}
 \renewcommand{\appendixtocname}{Appendix}
 \printbibliography

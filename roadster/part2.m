@@ -19,6 +19,7 @@ end
 clf;
 loglog(h,E,'x-r');
 hold on;
+% Plot different error convergences
 loglog(h,h,'--',h,h.^2,'-.',h,h.^4, '-');
 axis([min(h) max(h) min(E) 10]);
 legend('Simpson','h','h^2','h^4','Location','Best');

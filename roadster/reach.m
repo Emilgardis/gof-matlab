@@ -1,6 +1,5 @@
 function x= reach(C, route)
-%REACH Summary of this function goes here
-%   Detailed explanation goes here
+%REACH Gives reach on route when car is loaded at C Wh
 
 %FIXME should we have niter?
 

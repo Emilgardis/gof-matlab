@@ -1,4 +1,5 @@
 function S = simpson(func, a, b, n)
+%SIMPSON Integral via simpsons
 % S = simpson(func, a, b, n)
 % 
 % \( n \equiv 0 \pmod{2} \)

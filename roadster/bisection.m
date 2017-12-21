@@ -1,4 +1,6 @@
 function x = bisection(f,a,b,err)
+%BISECTION get the root, f(x) = 0
+% See also newton, fzero
 
 assert(sign(f(a)) ~= sign(f(b)))
 x = (a+b)/2;
